@@ -1,0 +1,40 @@
+﻿@model CoreLibrary.Menu
+
+<div class="row justify-content-lg-cehter">
+    <h1>Add new menu position</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add">
+            <div class="form-group">
+                <label asp-for="Id" class="control-label">Menu id</label>
+                <input asp-for="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" class=" form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Description</label>
+                <input asp-for="Description" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label">Image source</label>
+                <input asp-for="Image" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Price</label>
+                <input asp-for="Price" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class=" btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to projects list</a>
+</div>
+

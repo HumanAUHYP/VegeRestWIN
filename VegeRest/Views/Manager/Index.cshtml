@@ -1,0 +1,31 @@
+﻿@using CoreLibrary;
+@model List<Menu>
+
+<h2>Menu</h2>
+<div class="row justify-content-end">
+    <a class="btn btn-primary" asp-controller="Manager"
+       asp-action="Add" role="button">Add new menu position</a>
+</div>
+<br>
+
+<div class="row">
+    @foreach (var order in Model)
+    {
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center">
+                        <a>@order.Name</a>
+                    </h2>
+                    <p class="font-weight-normal">@order.Description</p>
+                    <img class="card-img-top" src="@order.Image" />
+                    <a class="btn btn-lg btn-danger" asp-controller="Manager"
+                        asp-action="Remove" asp-route-id="@order.Id"
+                        role="button">
+                        Remove
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
