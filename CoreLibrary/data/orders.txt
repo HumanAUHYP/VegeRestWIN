@@ -1,1 +1,1 @@
-12;4;Картоха;Принят
+1;QQQ;RRR;https://skazki.land/api/get-resized-image/zolotaya-ribka-da09c.png?width=1024&height=1024&fit=inside;10

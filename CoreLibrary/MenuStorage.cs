@@ -27,9 +27,23 @@ namespace CoreLibrary
             Menues.Add(menu);
         }
 
+        public void Change(Menu menu)
+        {
+            Menu chMenu = Menues.Find(m => m.Id == menu.Id);
+            chMenu.Name = menu.Name;
+            chMenu.Description = menu.Description;
+            chMenu.Image = menu.Image;
+            chMenu.Price = menu.Price;
+        }
+
         public void RemoveById(string id)
         {
-            Menues.RemoveAll(p => p.Id == int.Parse(id));
+            Menues.RemoveAll(m => m.Id == int.Parse(id));
+        }
+
+        public Menu FindById(string id)
+        {
+            return Menues.Find(m => m.Id == int.Parse(id));
         }
 
         public void ReadFromFile(string path)

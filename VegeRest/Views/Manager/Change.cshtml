@@ -1,34 +1,34 @@
-﻿@model CoreLibrary.Menu
+﻿@using CoreLibrary
+@model Menu
 
 <div class="row justify-content-lg-cehter">
-    <h1>Add new menu position</h1>
+    <h1>Change menu position</h1>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Add">
+        <form asp-action="Change">
             <div class="form-group">
-                <label asp-for="Id" class="control-label">Menu id</label>
-                <input asp-for="Id" class="form-control" />
+                <label asp-for="Id" class="control-label">Menu id: @Model.Id</label>
             </div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label">Name</label>
-                <input asp-for="Name" class=" form-control" />
+                <input asp-for="Name" value="@Model.Name" class=" form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label">Description</label>
-                <input asp-for="Description" class="form-control" />
+                <input asp-for="Description" value="@Model.Description" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Image" class="control-label">Image source</label>
-                <input asp-for="Image" class="form-control" />
+                <input asp-for="Image" value="@Model.Image" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Price" class="control-label">Price</label>
-                <input asp-for="Price" class="form-control" />
+                <input asp-for="Price" value="@Model.Price" class="form-control" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Add" class=" btn btn-primary" />
+                <input type="submit" value="Change" class=" btn btn-primary" />
             </div>
         </form>
     </div>

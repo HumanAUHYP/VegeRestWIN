@@ -41,6 +41,18 @@ namespace VegeRest.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Change(string id)
+        {
+            return View(menuStorage.FindById(id));
+        }
+
+        [HttpPost]
+        public IActionResult Change(Menu menu)
+        {
+            menuStorage.Change(menu);
+            menuStorage.WriteInFile(path);
+            return RedirectToAction("Index");
+        }
         public IActionResult Remove(string id)
         {
             menuStorage.RemoveById(id);
