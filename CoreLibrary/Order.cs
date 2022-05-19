@@ -17,5 +17,9 @@ namespace CoreLibrary
             ClientId = int.Parse(data[2]);
             Count = int.Parse(data[3]);
         }
+        public override string ToString()
+        {
+            return $"{Id};{MenuId};{ClientId};{Count}";
+        }
     }
 }

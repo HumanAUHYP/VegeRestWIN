@@ -24,6 +24,7 @@ namespace VegeRest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IMenuStorage, MenuStorage>();
+            services.AddSingleton<IClientStorage, ClientStorage>();
             services.AddControllersWithViews();
         }
 

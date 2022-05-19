@@ -14,5 +14,9 @@ namespace CoreLibrary
             Name = data[1];
             TableNum = data[2];
         }
+        public override string ToString()
+        {
+            return $"{Id};{Name};{TableNum}";
+        }
     }
 }

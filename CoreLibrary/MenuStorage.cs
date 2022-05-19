@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+//Сделать класс "хранилище" и класс "хранимый объект" и наследовать от них все остальные классы
 
 namespace CoreLibrary
 {
@@ -67,9 +68,9 @@ namespace CoreLibrary
         {
             using (var sw = new StreamWriter(path, false))
             {
-                foreach (var el in Menues)
+                foreach (var menu in Menues)
                 {
-                    sw.WriteLine(el);
+                    sw.WriteLine(menu);
                 }
             }
         }

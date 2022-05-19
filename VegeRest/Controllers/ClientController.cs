@@ -13,22 +13,37 @@ namespace VegeRest.Controllers
     public class ClientController : Controller
     {
         private IWebHostEnvironment Environment;
-        private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt";
+        private string menuPath = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\menu.txt";
+        private string clientsPath = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\clients.txt";
 
-        // ссылка на объект - хранилище заказов
+        // ссылка на объект - хранилище заказов и хранилище клиентов
         MenuStorage menuStorage;
+        ClientStorage clientStorage;
 
-        public ClientController(IWebHostEnvironment _environment, IMenuStorage _menuStorage)
+        public ClientController(IWebHostEnvironment _environment, IMenuStorage _menuStorage, IClientStorage _clientStorage)
         {
             menuStorage = (MenuStorage)_menuStorage;
+            clientStorage = (ClientStorage)_clientStorage;
         }
 
         public IActionResult Index()
         {
-            menuStorage.ReadFromFile(path);
-            var menues = menuStorage.Menues;
+            return View();
+        }
 
+        public IActionResult Menu()
+        {
+            menuStorage.ReadFromFile(menuPath);
+            var menues = menuStorage.Menues;
             return View(menues);
+        }
+
+        [HttpPost]
+        public IActionResult SaveClient(Client client)
+        {
+            clientStorage.Add(client);
+            clientStorage.WriteInFile(clientsPath);
+            return RedirectToAction("Menu");
         }
     }
 }
