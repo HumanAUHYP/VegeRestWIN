@@ -6,23 +6,28 @@
 <br />
 
 <div class="row">
-    @foreach (var order in Model)
+    @foreach (var menu in Model)
     {
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
                     <h2 class="card-title text-center">
-                        <a>@order.Name</a>
+                        <a>@menu.Name</a>
                     </h2>
                     <div>
-                        <p class="font-weight-normal">@order.Description</p>
+                        <p class="font-weight-normal">@menu.Description</p>
                     </div>
                     <div>
-                        <img class="card-img-top" src="@order.Image" />
+                        <img class="card-img-top" src="@menu.Image" />
                     </div>
                     <div>
-                        <p class="font-weight-normal">Cost @order.Price $</p>
+                        <p class="font-weight-normal">Cost @menu.Price $</p>
                     </div>
+                    <a class="btn btn-primary" asp-controller="Client"
+                       asp-action="Add" asp-route-id="@menu.Id"
+                       role="button">
+                        Add to order
+                    </a>
                 </div>
             </div>
         </div>
