@@ -13,8 +13,8 @@ namespace VegeRest.Controllers
     public class ClientController : Controller
     {
         private IWebHostEnvironment Environment;
-        private string menuPath = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\menu.txt";
-        private string clientsPath = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\clients.txt";
+        private string menuPath = @"..\CoreLibrary\data\menu.txt";
+        private string clientsPath = @"..\CoreLibrary\data\clients.txt";
 
         // ссылка на объект - хранилище заказов и хранилище клиентов
         MenuStorage menuStorage;

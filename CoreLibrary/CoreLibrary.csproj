@@ -8,11 +8,4 @@
     <None Remove="data\orders.txt" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="data\orders.txt">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>
