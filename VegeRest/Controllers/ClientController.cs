@@ -45,5 +45,10 @@ namespace VegeRest.Controllers
             clientStorage.WriteInFile(clientsPath);
             return RedirectToAction("Menu");
         }
+
+        public IActionResult Options(string id)
+        {
+            return View(menuStorage.FindById(id));
+        }
     }
 }

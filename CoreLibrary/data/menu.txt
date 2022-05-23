@@ -1,2 +1,2 @@
-1;QQQ;RRR;https://skazki.land/api/get-resized-image/zolotaya-ribka-da09c.png?width=1024&height=1024&fit=inside;10
-2;Морковь;Сырая;https://vkustorg.com/image/cache/Ovochi_frukty/1460024087-1000x1000.jpg;6
+1;Капуста;100г;https://www.prismamarket.ru/upload/iblock/691/2000602400008_TGTBTV_.jpg;10
+2;Морковь;50г;https://vkustorg.com/image/cache/Ovochi_frukty/1460024087-1000x1000.jpg;6
