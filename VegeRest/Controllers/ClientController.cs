@@ -14,7 +14,6 @@ namespace VegeRest.Controllers
     {
         private IWebHostEnvironment Environment;
         private string menuPath = @"..\CoreLibrary\data\menu.txt";
-        private string clientsPath = @"..\CoreLibrary\data\clients.txt";
 
         // ссылка на объект - хранилище заказов и хранилище клиентов
         MenuStorage menuStorage;
@@ -42,7 +41,6 @@ namespace VegeRest.Controllers
         public IActionResult SaveClient(Client client)
         {
             clientStorage.Add(client);
-            clientStorage.WriteInFile(clientsPath);
             return RedirectToAction("Menu");
         }
 

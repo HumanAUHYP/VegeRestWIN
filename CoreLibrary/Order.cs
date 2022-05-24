@@ -7,6 +7,7 @@ namespace CoreLibrary
         public int MenuId { get; set; }
         public int ClientId { get; set; }
         public int CookingOptionId { get; set; }
+        public int CuttingOptionId { get; set; }
         public int Count { get; set; }
 
         public Order() { }

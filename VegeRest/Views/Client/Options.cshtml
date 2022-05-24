@@ -4,3 +4,38 @@
 <div class="row justify-content-lg-cehter">
     <h1>Choice serving</h1>
 </div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddToOrder">
+            <div class="form-group">
+                <img class="card-img-top" src="@Model.Image" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Вариант приготовления</label>
+                <select class="form-control">
+                    @foreach (var option in CookingOptions.Options)
+                    {
+                        <option>@option.Title</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Вариант нарезки</label>
+                <select class="form-control">
+                    @foreach (var option in CuttingOptions.Options)
+                    {
+                        <option>@option.Title</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add to order" class=" btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Menu">Back to menu list</a>
+</div>

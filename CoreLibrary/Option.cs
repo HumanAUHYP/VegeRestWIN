@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoreLibrary
 {
-    class Option
+    public class Option
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -15,7 +15,7 @@ namespace CoreLibrary
             var data = str.Split(';');
             Id = int.Parse(data[0]);
             Title = data[1];
-            Price = double.Parse(data[1]);
+            Price = double.Parse(data[2]);
         }
     }
 }
