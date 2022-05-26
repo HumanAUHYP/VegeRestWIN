@@ -48,5 +48,10 @@ namespace VegeRest.Controllers
         {
             return View(menuStorage.FindById(id));
         }
+
+        public IActionResult AddToOrder()
+        {
+            return View();
+        }
     }
 }
