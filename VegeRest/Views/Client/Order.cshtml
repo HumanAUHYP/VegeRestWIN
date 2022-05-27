@@ -1,0 +1,47 @@
+﻿@using CoreLibrary;
+@model List<Order>
+@{double totalCost = 0;}
+
+<h2>My order</h2>
+
+<div class="row">
+    @foreach (var order in Model)
+    {
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center">
+                        <a>@order.Name</a>
+                    </h2>
+                    <div>
+                        <img class="card-img-top" src="@order.Image" />
+                    </div>
+                    <div>
+                        <p class="font-weight-normal">Cooking option: @order.CookingOption</p>
+                    </div>
+                    <div>
+                        <p class="font-weight-normal">Cutting option: @order.CuttingOption</p>
+                    </div>
+                    <div>
+                        <p class="font-weight-normal">Count: @order.Count</p>
+                    </div>
+                    <div>
+                        <p class="font-weight-normal">Cost: @order.Price $</p>
+                        @{totalCost += order.Price;}
+                    </div>
+                    <a class="btn btn-primary" asp-controller="Client"
+                       asp-action="ChangeOptions" asp-route-id="@order.Id"
+                       role="button">
+                        Change options
+                    </a>
+                    <a class="btn btn-danger" asp-controller="Client"
+                       asp-action="Remove" asp-route-id="@order.Id"
+                       role="button">
+                        Remove
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<h2>Total cost: @totalCost</h2>

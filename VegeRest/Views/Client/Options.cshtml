@@ -10,6 +10,9 @@
         <form asp-action="AddToOrder">
             <input type="hidden" asp-for="ClientId" value="@ClientStorage.Clients[0].Id"/>
             <input type="hidden" asp-for="MenuId" value="@Model.MenuId"/>
+            <input type="hidden" asp-for="Name" value="@Model.Name"/>
+            <input type="hidden" asp-for="Price" value="@Model.Price"/>
+            <input type="hidden" asp-for="Image" value="@Model.Image"/>
             <div class="form-group">
                 <img class="card-img-top" src="@Model.Image" />
             </div>

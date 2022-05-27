@@ -8,7 +8,6 @@ namespace CoreLibrary
 {
     public static class ClientStorage
     {
-        
         public static List<Client> Clients = new List<Client>();
 
         public static void Add(Client client)
@@ -17,11 +16,6 @@ namespace CoreLibrary
                 client.Id = Clients.Last().Id + 1;
             else client.Id = 1;
             Clients.Add(client);
-        }
-
-        public static void RemoveByTableNum(string tableNum)
-        {
-            Clients.RemoveAll(m => m.TableNum == tableNum);
         }
     }
 }

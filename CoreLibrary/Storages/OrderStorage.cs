@@ -26,6 +26,7 @@ namespace CoreLibrary
             if (Orders.Count != 0)
                 order.Id = Orders.Last().Id + 1;
             else order.Id = 1;
+            order.Price *= order.Count;
             Orders.Add(order);
         }
 

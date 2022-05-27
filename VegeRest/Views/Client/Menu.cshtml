@@ -2,8 +2,11 @@
 @model List<Menu>
 
 <h2>Menu</h2>
-
-<br />
+<a class="btn btn-primary" asp-controller="Client"
+   asp-action="Order" role="button">
+    My order
+</a>
+<br/>
 
 <div class="row">
     @foreach (var menu in Model)

@@ -33,8 +33,7 @@ namespace VegeRest.Controllers
         public IActionResult Menu()
         {
             menuStorage.ReadFromFile(menuPath);
-            var menues = menuStorage.Menues;
-            return View(menues);
+            return View(menuStorage.Menues);
         }
 
         [HttpPost]
@@ -46,11 +45,7 @@ namespace VegeRest.Controllers
 
         public IActionResult Options(string id)
         {
-            Menu selectedMenu = menuStorage.FindById(id);
-            Order order = new Order();
-            order.MenuId = int.Parse(id);
-            order.Image = selectedMenu.Image;
-            return View(order);
+            return View(new Order(id, menuStorage.FindById(id)));
         }
 
         public IActionResult AddToOrder(Order order)
@@ -58,6 +53,18 @@ namespace VegeRest.Controllers
             orderStorage.Add(order);
             orderStorage.WriteInFile(ordersPath);
             return RedirectToAction("Menu");
+        }
+
+        public IActionResult Order()
+        {
+            //orderStorage.ReadFromFile(ordersPath);
+            return View(orderStorage.Orders);
+        }
+
+        public IActionResult Remove(string id)
+        {
+            orderStorage.RemoveById(id);
+            return RedirectToAction("Basket");
         }
     }
 }

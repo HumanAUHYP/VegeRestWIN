@@ -9,9 +9,18 @@ namespace CoreLibrary
         public string CookingOption { get; set; }
         public string CuttingOption { get; set; }
         public int Count { get; set; }
+        public double Price { get; set; }
         public string Image { get; set; }
+        public string Name { get; set; }
 
         public Order() { }
+        public Order(string id, Menu menu)
+        {
+            MenuId = int.Parse(id);
+            Image = menu.Image;
+            Name = menu.Name;
+            Price = menu.Price;
+        }
         public Order(string str) 
         {
             var data = str.Split(';');
