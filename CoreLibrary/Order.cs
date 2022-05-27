@@ -6,9 +6,10 @@ namespace CoreLibrary
         public int Id { get; set; }
         public int MenuId { get; set; }
         public int ClientId { get; set; }
-        public int CookingOptionId { get; set; }
-        public int CuttingOptionId { get; set; }
+        public string CookingOption { get; set; }
+        public string CuttingOption { get; set; }
         public int Count { get; set; }
+        public string Image { get; set; }
 
         public Order() { }
         public Order(string str) 
@@ -17,12 +18,13 @@ namespace CoreLibrary
             Id = int.Parse(data[0]);
             MenuId = int.Parse(data[1]);
             ClientId = int.Parse(data[2]);
-            CookingOptionId = int.Parse(data[3]);
-            Count = int.Parse(data[4]);
+            CookingOption = data[3];
+            CuttingOption = data[4];
+            Count = int.Parse(data[5]);
         }
         public override string ToString()
         {
-            return $"{Id};{MenuId};{ClientId};{CookingOptionId};{Count}";
+            return $"{Id};{MenuId};{ClientId};{CookingOption};{CuttingOption};{Count}";
         }
     }
 }

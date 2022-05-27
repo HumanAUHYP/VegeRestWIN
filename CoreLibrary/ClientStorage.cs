@@ -5,27 +5,17 @@ using System.Text;
 
 namespace CoreLibrary
 {
-    public interface IClientStorage
-    {
-        void Add(Client client);
-        void RemoveByTableNum(string tableNum);
-    }
-    public class ClientStorage : IClientStorage
+    public static class ClientStorage
     {
         
-        public List<Client> Clients { get; private set; }
+        public static List<Client> Clients = new List<Client>();
 
-        public ClientStorage()
-        {
-            Clients = new List<Client>();
-        }
-
-        public void Add(Client client)
+        public static void Add(Client client)
         {
             Clients.Add(client);
         }
 
-        public void RemoveByTableNum(string tableNum)
+        public static void RemoveByTableNum(string tableNum)
         {
             Clients.RemoveAll(m => m.TableNum == tableNum);
         }

@@ -17,12 +17,10 @@ namespace VegeRest.Controllers
 
         // ссылка на объект - хранилище заказов и хранилище клиентов
         MenuStorage menuStorage;
-        ClientStorage clientStorage;
 
-        public ClientController(IWebHostEnvironment _environment, IMenuStorage _menuStorage, IClientStorage _clientStorage)
+        public ClientController(IWebHostEnvironment _environment, IMenuStorage _menuStorage)
         {
             menuStorage = (MenuStorage)_menuStorage;
-            clientStorage = (ClientStorage)_clientStorage;
         }
 
         public IActionResult Index()
@@ -40,16 +38,20 @@ namespace VegeRest.Controllers
         [HttpPost]
         public IActionResult SaveClient(Client client)
         {
-            clientStorage.Add(client);
+            ClientStorage.Add(client);
             return RedirectToAction("Menu");
         }
 
         public IActionResult Options(string id)
         {
-            return View(menuStorage.FindById(id));
+            Menu selectedMenu = menuStorage.FindById(id);
+            Order order = new Order();
+            order.MenuId = int.Parse(id);
+            order.Image = selectedMenu.Image;
+            return View(order);
         }
 
-        public IActionResult AddToOrder()
+        public IActionResult AddToOrder(Order order)
         {
             return View();
         }
