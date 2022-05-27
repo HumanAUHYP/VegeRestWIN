@@ -53,7 +53,7 @@ namespace VegeRest.Controllers
 
         public IActionResult AddToOrder(Order order)
         {
-            return View();
+            return RedirectToAction("Menu");
         }
     }
 }

@@ -9,7 +9,6 @@
     <div class="col-md-4">
         <form asp-action="AddToOrder">
             <input type="hidden" asp-for="ClientId" value="@ClientStorage.Clients[0].Id" />
-            <input type="hidden" asp-for="Id" value="1" />
             <div class="form-group">
                 <img class="card-img-top" src="@Model.Image" />
             </div>

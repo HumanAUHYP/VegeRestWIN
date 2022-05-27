@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace CoreLibrary
 {
@@ -15,6 +16,9 @@ namespace CoreLibrary
 
         public void Add(Order order)
         {
+            if (Orders.Count != 0)
+                order.Id = Orders.Last().Id + 1;
+            else order.Id = 1;
             Orders.Add(order);
         }
 
