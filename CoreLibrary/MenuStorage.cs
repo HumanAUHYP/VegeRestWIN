@@ -25,6 +25,9 @@ namespace CoreLibrary
 
         public void Add(Menu menu)
         {
+            if (Menues.Count != 0)
+                menu.Id = Menues.Last().Id + 1;
+            else menu.Id = 1;
             Menues.Add(menu);
         }
 
