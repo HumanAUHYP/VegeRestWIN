@@ -5,7 +5,14 @@ using System.Linq;
 
 namespace CoreLibrary
 {
-    public class OrderStorage
+    public interface IOrderStorage
+    {
+        void Add(Order order);
+        void RemoveById(string id);
+        void ReadFromFile(string path);
+        void WriteInFile(string path);
+    }
+    public class OrderStorage : IOrderStorage
     {
         public List<Order> Orders { get; private set; }
 

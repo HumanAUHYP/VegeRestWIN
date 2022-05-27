@@ -12,15 +12,17 @@ namespace VegeRest.Controllers
 {
     public class ClientController : Controller
     {
-        private IWebHostEnvironment Environment;
         private string menuPath = @"..\CoreLibrary\data\menu.txt";
+        private string ordersPath = @"..\CoreLibrary\data\orders.txt";
 
         // ссылка на объект - хранилище заказов и хранилище клиентов
         MenuStorage menuStorage;
+        OrderStorage orderStorage;
 
-        public ClientController(IWebHostEnvironment _environment, IMenuStorage _menuStorage)
+        public ClientController(IMenuStorage _menuStorage, IOrderStorage _orderStorage)
         {
             menuStorage = (MenuStorage)_menuStorage;
+            orderStorage = (OrderStorage)_orderStorage;
         }
 
         public IActionResult Index()
@@ -53,6 +55,8 @@ namespace VegeRest.Controllers
 
         public IActionResult AddToOrder(Order order)
         {
+            orderStorage.Add(order);
+            orderStorage.WriteInFile(ordersPath);
             return RedirectToAction("Menu");
         }
     }
