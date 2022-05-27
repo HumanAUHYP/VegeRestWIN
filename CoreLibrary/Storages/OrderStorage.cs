@@ -55,9 +55,9 @@ namespace CoreLibrary
         {
             using (var sw = new StreamWriter(path, false))
             {
-                foreach (var el in Orders)
+                foreach (var order in Orders)
                 {
-                    sw.WriteLine(el);
+                    sw.WriteLine(order);
                 }
             }
         }
