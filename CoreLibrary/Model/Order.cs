@@ -21,19 +21,9 @@ namespace CoreLibrary
             Name = menu.Name;
             Price = menu.Price;
         }
-        public Order(string str) 
-        {
-            var data = str.Split(';');
-            Id = int.Parse(data[0]);
-            MenuId = int.Parse(data[1]);
-            ClientId = int.Parse(data[2]);
-            CookingOption = data[3];
-            CuttingOption = data[4];
-            Count = int.Parse(data[5]);
-        }
         public override string ToString()
         {
-            return $"{Id};{MenuId};{ClientId};{CookingOption};{CuttingOption};{Count}";
+            return $"{Id};{Name};Table num {ClientStorage.FindById(ClientId).TableNum};{CookingOption};{CuttingOption};{Count}";
         }
     }
 }

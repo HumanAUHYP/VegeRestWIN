@@ -17,5 +17,9 @@ namespace CoreLibrary
             else client.Id = 1;
             Clients.Add(client);
         }
+        public static Client FindById(int id)
+        {
+            return Clients.Find(x => x.Id == id);
+        }
     }
 }
