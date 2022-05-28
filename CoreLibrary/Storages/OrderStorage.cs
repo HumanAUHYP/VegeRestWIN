@@ -9,6 +9,7 @@ namespace CoreLibrary
     {
         void Add(Order order);
         void RemoveById(string id);
+        void ReadFromFile(string path)
         void WriteInFile(string path);
     }
     public class OrderStorage : IOrderStorage
@@ -33,7 +34,22 @@ namespace CoreLibrary
         {
             Orders.RemoveAll(p => p.Id == int.Parse(id));
         }
-
+        public void ReadFromFile(string path)
+        {
+            Orders.Clear();
+            try
+            {
+                using (var sr = new StreamReader(path))
+                {
+                    string str;
+                    while ((str = sr.ReadLine()) != null)
+                    {
+                        Orders.Add(new Order(str));
+                    }
+                }
+            }
+            catch (Exception) { }
+        }
         public void WriteInFile(string path)
         {
             using (var sw = new StreamWriter(path, false))

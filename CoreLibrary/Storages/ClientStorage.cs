@@ -21,5 +21,9 @@ namespace CoreLibrary
         {
             return Clients.Find(x => x.Id == id);
         }
+        public static Client FindByTableNum(string tableNum)
+        {
+            return Clients.Find(x => x.TableNum == tableNum);
+        }
     }
 }
