@@ -8,9 +8,7 @@ namespace VegeRestAPI.Controllers
     [ApiController]
     public class ClientController : ControllerBase
     {
-        private string menuPath = @"..\CoreLibrary\data\menu.txt";
         private string orderPath = @"..\CoreLibrary\data\orders.txt";
-        private MenuStorage menuStorage = new MenuStorage();
         private OrderStorage orderStorage = new OrderStorage();
 
         // POST api/<ManagerController>
@@ -50,7 +48,7 @@ namespace VegeRestAPI.Controllers
             {
                 orderStorage.Change(order);
                 orderStorage.WriteInFile(orderPath);
-                return Ok(menuStorage.FindById(id));
+                return Ok(orderStorage.FindById(id));
             }
             catch
             {
