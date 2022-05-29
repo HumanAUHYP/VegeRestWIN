@@ -1,3 +1,5 @@
-1;Капуста;100г;https://www.prismamarket.ru/upload/iblock/691/2000602400008_TGTBTV_.jpg;10
-2;Морковь;50г;https://vkustorg.com/image/cache/Ovochi_frukty/1460024087-1000x1000.jpg;6
-3;Брокколи;100г;https://i3.wp.com/kakvarim.ru/wp-content/uploads/2018/05/kak-varit-brokkoli-post-800x500.jpg;5
+1;Яблоко;1 шт;https://st.depositphotos.com/1003272/1632/i/450/depositphotos_16322913-stock-photo-red-apple.jpg;2
+2;Морковь;100г;https://vkustorg.com/image/cache/Ovochi_frukty/1460024087-1000x1000.jpg;5
+3;Капуста;100г;https://www.prismamarket.ru/upload/iblock/691/2000602400008_TGTBTV_.jpg;8
+4;Брокколи;100г;https://i3.wp.com/kakvarim.ru/wp-content/uploads/2018/05/kak-varit-brokkoli-post-800x500.jpg;6
+5;Персик;1 шт;https://www.gastronom.ru/binfiles/images/20200716/b7221125.jpg;10
