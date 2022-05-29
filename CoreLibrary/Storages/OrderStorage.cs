@@ -30,9 +30,22 @@ namespace CoreLibrary
             Orders.Add(order);
         }
 
+        public void Change(Order order)
+        {
+            Order chOrder = Orders.Find(m => m.Id == order.Id);
+            chOrder.CookingOption = order.CookingOption;
+            chOrder.CuttingOption = order.CuttingOption;
+            chOrder.Count = order.Count;
+        }
+
         public void RemoveById(string id)
         {
             Orders.RemoveAll(p => p.Id == int.Parse(id));
+        }
+
+        public Order FindById(string id)
+        {
+            return Orders.Find(m => m.Id == int.Parse(id));
         }
         public void ReadFromFile(string path)
         {
