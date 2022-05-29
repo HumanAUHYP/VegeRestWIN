@@ -2,4 +2,3 @@
 2;Морковь;100г;https://vkustorg.com/image/cache/Ovochi_frukty/1460024087-1000x1000.jpg;5
 3;Капуста;100г;https://www.prismamarket.ru/upload/iblock/691/2000602400008_TGTBTV_.jpg;8
 4;Брокколи;100г;https://i3.wp.com/kakvarim.ru/wp-content/uploads/2018/05/kak-varit-brokkoli-post-800x500.jpg;6
-5;Что-то;неизвестно;string;1110

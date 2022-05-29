@@ -50,22 +50,35 @@ namespace VegeRestAPI.Controllers
             }
         }
 
+        // PUT api/<ManagerController>
         [HttpPut("{id}")]
-        public ActionResult<Menu> Put(int id, [FromBody] Menu menu)
+        public ActionResult<Menu> Put(string id, [FromBody] Menu menu)
         {
-            menu.Id = id;
-            if (menuStorage.FindById($"{id}") == null)
+            menu.Id = int.Parse(id);
+            if (menuStorage.FindById(id) == null)
                 return BadRequest();
             try
             {
                 menuStorage.Change(menu);
                 menuStorage.WriteInFile(menuPath);
-                return Ok(menuStorage.FindById($"{id}"));
+                return Ok(menuStorage.FindById(id));
             }
             catch
             {
                 return BadRequest();
             }
+        }
+
+        // DELETE api/<ManagerController>
+        [HttpDelete("{id}")]
+        public ActionResult Delete(string id)
+        {
+            var menu = menuStorage.FindById(id);
+            if (menu == null)
+                return BadRequest();
+            menuStorage.RemoveById(id);
+            menuStorage.WriteInFile(menuPath);
+            return Ok();
         }
     }
 }
