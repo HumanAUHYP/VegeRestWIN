@@ -24,9 +24,14 @@ namespace VegeRestAPI.Controllers
 
         // GET api/<ManagerController>/menu
         [HttpGet]
-        public ActionResult<ICollection<Menu>> GetMenu()
+        public ActionResult<ICollection<Menu>> GetAllMenu()
         {
             return menuStorage.Menues;
+        }
+        [HttpGet("{Id}")]
+        public ActionResult<Menu> GetMenuById(string id)
+        {
+            return menuStorage.FindById(id);
         }
 
         // POST api/<ManagerController>
