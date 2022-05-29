@@ -9,7 +9,7 @@ namespace CoreLibrary
     {
         void Add(Order order);
         void RemoveById(string id);
-        void ReadFromFile(string path)
+        void ReadFromFile(string path);
         void WriteInFile(string path);
     }
     public class OrderStorage : IOrderStorage
