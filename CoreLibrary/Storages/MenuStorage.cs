@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-//Сделать класс "хранилище" и класс "хранимый объект" и наследовать от них все остальные классы
 
 namespace CoreLibrary
 {

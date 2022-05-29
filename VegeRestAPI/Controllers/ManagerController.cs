@@ -49,5 +49,23 @@ namespace VegeRestAPI.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPut("{id}")]
+        public ActionResult<Menu> Put(int id, [FromBody] Menu menu)
+        {
+            menu.Id = id;
+            if (menuStorage.FindById($"{id}") == null)
+                return BadRequest();
+            try
+            {
+                menuStorage.Change(menu);
+                menuStorage.WriteInFile(menuPath);
+                return Ok(menuStorage.FindById($"{id}"));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }
