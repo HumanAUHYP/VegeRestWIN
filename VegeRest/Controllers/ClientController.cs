@@ -14,7 +14,7 @@ namespace VegeRest.Controllers
     {
         private string menuPath = @"..\CoreLibrary\data\menu.txt";
         private string ordersPath = @"..\CoreLibrary\data\orders.txt";
-        private string reportPath = @"..\CoreLibrary\data\";
+        private string reportPath = @"..\CoreLibrary\data\Reports\";
 
         // ссылка на объект - хранилище заказов и хранилище клиентов
         MenuStorage menuStorage;
@@ -61,16 +61,31 @@ namespace VegeRest.Controllers
             return View(orderStorage.Orders);
         }
 
+        public IActionResult ChangeOptions(string id)
+        {
+            var order = orderStorage.FindById(id);
+            order.Price = order.Price / order.Count;
+            return View(order);
+        }
+
+        public IActionResult Change(Order order)
+        {
+            orderStorage.Change(order);
+            orderStorage.WriteInFile(ordersPath);
+            return RedirectToAction("Order");
+        }
+
         public IActionResult Remove(string id)
         {
             orderStorage.RemoveById(id);
+            orderStorage.WriteInFile(ordersPath);
             return RedirectToAction("Order");
         }
 
         public IActionResult Checkout()
         {
             orderStorage.WriteInFile(reportPath + $"Table{ClientStorage.Clients[0].TableNum}.txt");
-            orderStorage = new OrderStorage();
+            orderStorage.Orders.Clear();
             return RedirectToAction("Menu");
         }
     }

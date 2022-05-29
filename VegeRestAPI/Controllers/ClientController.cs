@@ -12,14 +12,13 @@ namespace VegeRestAPI.Controllers
         private OrderStorage orderStorage = new OrderStorage();
 
         // POST api/<ManagerController>
-        [HttpPost]
-        public ActionResult Post([FromBody] Order order)
+        [HttpPost("{clientName}, {tableNum}")]
+        public ActionResult Post([FromBody] Order order, string clientName, string tableNum)
         {
             try
             {
-                orderStorage.ReadFromFile(orderPath);
+                ClientStorage.Add(new Client($"{1};{clientName};{tableNum}"));
                 orderStorage.Add(order);
-                orderStorage.WriteInFile(orderPath);
                 return Ok();
             }
             catch
@@ -32,7 +31,6 @@ namespace VegeRestAPI.Controllers
         [HttpGet]
         public ActionResult<ICollection<Order>> GetOrder()
         {
-            orderStorage.ReadFromFile(orderPath);
             return orderStorage.Orders;
         }
 
@@ -40,14 +38,12 @@ namespace VegeRestAPI.Controllers
         [HttpPut("{id}")]
         public ActionResult<Order> Put(string id, [FromBody] Order order)
         {
-            orderStorage.ReadFromFile(orderPath);
             order.Id = int.Parse(id);
             if (orderStorage.FindById(id) == null)
                 return BadRequest();
             try
             {
                 orderStorage.Change(order);
-                orderStorage.WriteInFile(orderPath);
                 return Ok(orderStorage.FindById(id));
             }
             catch

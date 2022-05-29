@@ -36,6 +36,7 @@ namespace CoreLibrary
             chOrder.CookingOption = order.CookingOption;
             chOrder.CuttingOption = order.CuttingOption;
             chOrder.Count = order.Count;
+            chOrder.Price *= chOrder.Count;
         }
 
         public void RemoveById(string id)
