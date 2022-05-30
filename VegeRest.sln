@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegeRestConsoleApp", "VegeR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegeRestAPI", "VegeRestAPI\VegeRestAPI.csproj", "{1791293B-EEFF-48D8-8AC5-1471E48B7CDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegeRestTests", "VegeRestTests\VegeRestTests.csproj", "{222B00E0-9CF8-4EF4-B5FC-7C5A499D366C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1791293B-EEFF-48D8-8AC5-1471E48B7CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1791293B-EEFF-48D8-8AC5-1471E48B7CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1791293B-EEFF-48D8-8AC5-1471E48B7CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{222B00E0-9CF8-4EF4-B5FC-7C5A499D366C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{222B00E0-9CF8-4EF4-B5FC-7C5A499D366C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{222B00E0-9CF8-4EF4-B5FC-7C5A499D366C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{222B00E0-9CF8-4EF4-B5FC-7C5A499D366C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
