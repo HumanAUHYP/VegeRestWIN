@@ -2,7 +2,7 @@
 @model Order
 
 <div class="row justify-content-lg-cehter">
-    <h1>Choice serving</h1>
+    <h1>Настройка сервировки</h1>
 </div>
 
 <div class="row">
@@ -35,16 +35,16 @@
                 </select>
             </div>
             <div class="form-group">
-                <label class="control-label">Count</label>
+                <label class="control-label">Количество</label>
                 <input asp-for="Count" class="form-control" value="1" min="1"/>
             </div>
             <div class="form-group">
-                <input type="submit" value="Add to order" class=" btn btn-primary" />
+                <input type="submit" value="Добавить в заказ" class=" btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Menu">Back to menu list</a>
+    <a asp-action="Menu">Вернуться к меню</a>
 </div>

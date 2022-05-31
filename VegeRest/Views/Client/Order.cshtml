@@ -2,7 +2,7 @@
 @model List<Order>
 @{double totalCost = 0;}
 
-<h2>My order</h2>
+<h2>Мой заказ</h2>
 
 <div class="row">
     @foreach (var order in Model)
@@ -17,37 +17,37 @@
                         <img class="card-img-top" src="@order.Image" />
                     </div>
                     <div>
-                        <p class="font-weight-normal">Cooking option: @order.CookingOption</p>
+                        <p class="font-weight-normal">Готовка: @order.CookingOption</p>
                     </div>
                     <div>
-                        <p class="font-weight-normal">Cutting option: @order.CuttingOption</p>
+                        <p class="font-weight-normal">Нарезка: @order.CuttingOption</p>
                     </div>
                     <div>
-                        <p class="font-weight-normal">Count: @order.Count</p>
+                        <p class="font-weight-normal">Количество: @order.Count</p>
                     </div>
                     <div>
-                        <p class="font-weight-normal">Cost: @order.Price $</p>
+                        <p class="font-weight-normal">Стоимость: @order.Price $</p>
                         @{totalCost += order.Price;}
                     </div>
                     <a class="btn btn-primary" asp-controller="Client"
                        asp-action="ChangeOptions" asp-route-id="@order.Id"
                        role="button">
-                        Change options
+                        Изменить опции
                     </a>
                     <a class="btn btn-danger" asp-controller="Client"
                        asp-action="Remove" asp-route-id="@order.Id"
                        role="button">
-                        Remove
+                        Удалить
                     </a>
                 </div>
             </div>
         </div>
     }
 </div>
-<h2>Total cost: @totalCost</h2>
+<h2>Полная стоимость заказа: @totalCost</h2>
 <a class="btn btn-primary" asp-controller="Client"
    asp-action="Checkout" role="button">
-    Chekout
+    Заказать
 </a>
 
 <div>

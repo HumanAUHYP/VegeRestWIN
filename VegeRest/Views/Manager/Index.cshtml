@@ -4,7 +4,7 @@
 <h2>Menu</h2>
 <div class="row justify-content-end">
     <a class="btn btn-primary" asp-controller="Manager"
-       asp-action="Add" role="button">Add new menu position</a>
+       asp-action="Add" role="button">Добавить новое блюдо</a>
 </div>
 <br>
 
@@ -22,12 +22,12 @@
                     <a class="btn btn-lg btn-danger" asp-controller="Manager"
                        asp-action="Remove" asp-route-id="@menu.Id"
                        role="button">
-                        Remove
+                        Удалить
                     </a>
                     <a class="btn btn-primary" asp-controller="Manager"
                        asp-action="Change" asp-route-id="@menu.Id"
                        role="button">
-                        Change
+                        Изменить
                     </a>
                 </div>
             </div>
