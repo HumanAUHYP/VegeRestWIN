@@ -1,7 +1,7 @@
 ﻿@using CoreLibrary;
 @model List<Menu>
 
-<h2>Menu</h2>
+<h2>Меню</h2>
 <a class="btn btn-primary" asp-controller="Client"
    asp-action="Order" role="button">
     Мой заказ
@@ -24,7 +24,7 @@
                         <img class="card-img-top" src="@menu.Image" />
                     </div>
                     <div>
-                        <p class="font-weight-normal">Cost @menu.Price $</p>
+                        <p class="font-weight-normal">Стоимость @menu.Price ₽</p>
                     </div>
                     <a class="btn btn-primary" asp-controller="Client"
                        asp-action="Options" asp-route-id="@menu.Id"

@@ -1,5 +1,4 @@
-﻿using System;
-namespace CoreLibrary
+﻿namespace CoreLibrary
 {
     public class Order
     {
@@ -33,7 +32,8 @@ namespace CoreLibrary
         }
         public override string ToString()
         {
-            return $"{Id};{Name};{ClientStorage.FindById(ClientId).TableNum};{CookingOption};{CuttingOption};{Count}";
+            return $"{Id};{Name};{ClientStorage.FindById(ClientId).TableNum}" +
+                $";{CookingOption};{CuttingOption};{Count}";
         }
     }
 }
