@@ -26,16 +26,42 @@ namespace CoreLibrary
             if (Menues.Count != 0)
                 menu.Id = Menues.Last().Id + 1;
             else menu.Id = 1;
+            menu.CheckQuinCells = false;
+            menu.IsCull = false;
+            menu.CheckBeehive = false;
+            menu.DaysForCheck = CountDaysForCheck(menu).DaysForCheck;
+            menu.AddDate = DateTime.Today;
             Menues.Add(menu);
         }
 
         public void Change(Menu menu)
         {
             Menu chMenu = Menues.Find(m => m.Id == menu.Id);
+            if (chMenu.CheckQuinCells != menu.CheckQuinCells ||
+                chMenu.IsCull != menu.IsCull ||
+                chMenu.CheckBeehive != menu.CheckBeehive)
+                chMenu.AddDate = DateTime.Today;
             chMenu.Name = menu.Name;
             chMenu.Description = menu.Description;
             chMenu.Image = menu.Image;
-            chMenu.Price = menu.Price;
+            chMenu.FiledFrames = menu.FiledFrames;
+            chMenu.CheckQuinCells = menu.CheckQuinCells;
+            chMenu.IsCull = menu.IsCull;
+            chMenu.CheckBeehive = menu.CheckBeehive;
+            chMenu.DaysForCheck = CountDaysForCheck(chMenu).DaysForCheck;
+        }
+
+        public Menu CountDaysForCheck(Menu menu)
+        {
+            if (menu.IsLayering)
+                menu.DaysForCheck = 4;
+            if (menu.CheckQuinCells)
+                menu.DaysForCheck = 1;
+            if (menu.IsCull)
+                menu.DaysForCheck = 1;
+            if (menu.CheckBeehive)
+                menu.DaysForCheck = 16;
+            return menu;
         }
 
         public void RemoveById(string id)

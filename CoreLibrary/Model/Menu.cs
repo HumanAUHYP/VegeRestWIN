@@ -11,7 +11,14 @@ namespace CoreLibrary
         public string Name { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
-        public double Price { get; set; }
+        public int FiledFrames { get; set; }
+        public bool IsLayering { get; set; }
+        public bool CheckQuinCells { get; set; }
+        public bool IsCull { get; set; }
+        public bool CheckBeehive { get; set; }
+        public int DaysForCheck { get; set; }
+        public DateTime AddDate { get; set; }
+
 
 
         public Menu() { }
@@ -23,12 +30,19 @@ namespace CoreLibrary
             Name = data[1];
             Description = data[2];
             Image = data[3];
-            Price = double.Parse(data[4]);
+            FiledFrames = int.Parse(data[4]);
+            IsLayering = bool.Parse(data[5]);
+            CheckQuinCells = bool.Parse(data[6]);
+            IsCull = bool.Parse(data[7]);
+            CheckBeehive = bool.Parse(data[8]);
+            DaysForCheck = int.Parse(data[9]);
+            AddDate = DateTime.Parse(data[10]);
+
         }
 
         public override string ToString()
         {
-            return $"{Id};{Name};{Description};{Image};{Price}";
+            return $"{Id};{Name};{Description};{Image};{FiledFrames};{IsLayering};{CheckQuinCells};{IsCull};{CheckBeehive};{DaysForCheck};{AddDate}";
         }
     }
 }

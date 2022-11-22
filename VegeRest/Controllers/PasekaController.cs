@@ -8,20 +8,27 @@ using System.Threading.Tasks;
 
 namespace VegeRest.Controllers
 {
-    public class ManagerController : Controller
+    public class PasekaController : Controller
     {
         private string path = @"..\CoreLibrary\data\menu.txt";
 
         // ссылка на объект - хранилище заказов
         MenuStorage menuStorage;
 
-        public ManagerController(IWebHostEnvironment _environment, IMenuStorage _menuStorage)
+        public PasekaController(IWebHostEnvironment _environment, IMenuStorage _menuStorage)
         {
             menuStorage = (MenuStorage)_menuStorage;
         }
         public IActionResult Index()
         {
             menuStorage.ReadFromFile(path);
+            var today = DateTime.Today;
+            foreach (Menu menu in menuStorage.Menues)
+            {
+                menu.DaysForCheck -= (int)Math.Round((today - menu.AddDate).TotalDays);
+                if (menu.DaysForCheck < 0)
+                    menu.DaysForCheck = 0;
+            }
             var menues = menuStorage.Menues;
             
             return View(menues);

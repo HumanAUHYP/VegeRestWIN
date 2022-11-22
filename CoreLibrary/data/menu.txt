@@ -1,4 +1,2 @@
-1;Яблоко;1 шт;https://st.depositphotos.com/1003272/1632/i/450/depositphotos_16322913-stock-photo-red-apple.jpg;15
-2;Морковь;1 шт;https://vkustorg.com/image/cache/Ovochi_frukty/1460024087-1000x1000.jpg;20
-3;Капуста;100г;https://www.prismamarket.ru/upload/iblock/691/2000602400008_TGTBTV_.jpg;28
-4;Брокколи;100г;https://i3.wp.com/kakvarim.ru/wp-content/uploads/2018/05/kak-varit-brokkoli-post-800x500.jpg;87
+1;Красный;Среднерусская пчела;https://static.baza.farpost.ru/v/1641510933187_bulletin;8;False;False;False;False;0;23.11.2022 0:00:00
+2;Синий;Среднерусская пчела;https://ru-ulei.ru/wp-content/uploads/2020/07/5mk31917.jpg;2;True;False;False;False;4;23.11.2022 0:00:00

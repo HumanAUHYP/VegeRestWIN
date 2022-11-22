@@ -18,7 +18,7 @@
             MenuId = int.Parse(id);
             Image = menu.Image;
             Name = menu.Name;
-            Price = menu.Price;
+            Price = menu.FiledFrames;
         }
         public Order(string str)
         {
