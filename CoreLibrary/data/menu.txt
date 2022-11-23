@@ -1,2 +1,6 @@
 1;Красный;Среднерусская пчела;https://static.baza.farpost.ru/v/1641510933187_bulletin;8;False;False;False;False;0;23.11.2022 0:00:00
 2;Синий;Среднерусская пчела;https://ru-ulei.ru/wp-content/uploads/2020/07/5mk31917.jpg;2;True;False;False;False;4;23.11.2022 0:00:00
+3;Деревянный;Среднерусская пчела;https://static.tildacdn.com/tild3731-6161-4039-a231-636466383566/1421240171_uley.jpg;6;False;False;False;False;0;23.11.2022 0:00:00
+4;Желтый широкий;Среднерусская пчела;https://static.tildacdn.com/tild3334-6630-4165-a337-336564343634/1556279627138973605.jpg;9;False;False;False;False;0;23.11.2022 0:00:00
+5;Желтый широкий 2;Среднерусская пчела;https://static.tildacdn.com/tild3334-6630-4165-a337-336564343634/1556279627138973605.jpg;2;True;True;False;False;1;23.11.2022 0:00:00
+6;Синий 2;Среднерусская пчела;https://ru-ulei.ru/wp-content/uploads/2020/07/5mk31917.jpg;2;True;False;False;False;4;23.11.2022 0:00:00
